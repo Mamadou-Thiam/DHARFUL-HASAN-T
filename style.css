@@ -1,0 +1,422 @@
+/* VARIABLES GLOBALES */
+:root {
+    --primary-color: #5d3587; /* Violet principal */
+    --secondary-color: #8c6fa6; /* Violet plus clair */
+    --text-color: #333;
+    --white-color: #fff;
+    --light-bg: #f5f5f5;
+}
+
+/* BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light-bg);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* EN-TÊTE */
+header {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.logo img {
+    height: 40px; /* Taille du logo */
+    margin-right: 10px;
+}
+
+/* NAVIGATION */
+#main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+#main-nav ul li a {
+    color: var(--white-color);
+    padding: 10px 15px;
+    display: block;
+    font-weight: 600;
+}
+
+#main-nav ul li a:hover {
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none; /* Caché par défaut sur grand écran */
+    background: none;
+    border: none;
+    color: var(--white-color);
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+/* BOUTON CTA (Call to Action) */
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    border: 2px solid var(--primary-color);
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* SECTIONS GÉNÉRALES */
+.content-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.purple-bg {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+.purple-bg h2 {
+    color: var(--white-color);
+}
+
+/* SECTION HERO */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('DHARFUL_HASANAT-background.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* TABLEAU DES TARIFS */
+.tarifs-table table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    border-collapse: collapse;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    overflow: hidden;
+    color: var(--text-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tarifs-table h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: var(--white-color); /* Dans la section purple-bg */
+}
+
+.tarifs-table th, .tarifs-table td {
+    padding: 15px;
+    border: 1px solid var(--light-bg);
+}
+
+.tarifs-table thead tr:first-child th {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1.1em;
+}
+
+.tarifs-table thead tr:nth-child(2) th {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+.tarifs-table tbody td {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* MODALITÉS DETAILS */
+.modalites-details {
+    margin-top: 40px;
+}
+
+.modalites-details h3 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.conditions-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.condition-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    width: 45%;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+}
+
+.condition-box h4 {
+    color: var(--primary-color);
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.condition-box ul {
+    list-style: none;
+}
+
+.condition-box ul li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    position: relative;
+}
+
+.condition-box ul li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+
+/* LISTE DES PRESTATIONS */
+.couvert-list {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.couvert-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--light-bg);
+    position: relative;
+    padding-left: 30px;
+}
+
+.couvert-list li::before {
+    content: "✔️"; /* Utilisation d'une coche emoji */
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+.image-container {
+    max-width: 600px;
+    margin: 40px auto 0;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+/* SECTION CONTACT */
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    color: var(--text-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.contact-form button {
+    width: 100%;
+    margin-top: 0;
+}
+
+/* PIED DE PAGE */
+footer {
+    background: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 20px 5%;
+    font-size: 0.9em;
+}
+
+.footer-links a {
+    color: var(--white-color);
+    margin: 0 10px;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+}
+
+/* RESPONSIVE (Mobile First) */
+@media (max-width: 768px) {
+    
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    /* Menu Hamburger */
+    .menu-toggle {
+        display: block; /* Afficher le bouton menu */
+    }
+
+    #main-nav {
+        display: none; /* Cacher le menu par défaut */
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Sous l'en-tête */
+        left: 0;
+        background-color: var(--primary-color);
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+        padding: 10px 0;
+    }
+
+    #main-nav.active {
+        display: block; /* Afficher quand actif */
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .conditions-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .condition-box {
+        width: 100%;
+    }
+
+    /* Tableau des tarifs */
+    .tarifs-table table, 
+    .tarifs-table thead, 
+    .tarifs-table tbody, 
+    .tarifs-table th, 
+    .tarifs-table td, 
+    .tarifs-table tr { 
+        display: block; 
+    }
+    
+    .tarifs-table thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .tarifs-table tr { border: 1px solid #ccc; margin-bottom: 20px; }
+    
+    .tarifs-table td { 
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+        text-align: right;
+    }
+
+    .tarifs-table td::before { 
+        content: attr(data-label); 
+        position: absolute;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+    
+    /* Adapter les étiquettes pour les tarifs en mode mobile (vous devrez modifier le HTML pour ajouter data-label) */
+    /* Alternative : Simplifiez le tableau ou utilisez des listes pour les petits écrans */
+
+    /* Pour le moment, on laisse le tableau non adapté pour se concentrer sur la structure, mais c'est un point à améliorer. */
+
+}
