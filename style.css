@@ -56,7 +56,7 @@ header {
     margin-right: 10px;
 }
 
-/* NAVIGATION */
+/* NAVIGATION (GRANDS ÉCRANS) */
 #main-nav ul {
     list-style: none;
     display: flex;
@@ -125,6 +125,7 @@ header {
 
 /* SECTION HERO */
 .hero {
+    /* REMARQUE : assurez-vous que 'assets/hero.png' existe */
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/hero.png') no-repeat center center/cover;
     height: 60vh;
     display: flex;
@@ -146,7 +147,7 @@ header {
     font-weight: 300;
 }
 
-/* TABLEAU DES TARIFS */
+/* TABLEAU DES TARIFS (GRANDS ÉCRANS) */
 .tarifs-table table {
     width: 100%;
     max-width: 800px;
@@ -162,7 +163,7 @@ header {
 .tarifs-table h3 {
     font-size: 1.8em;
     margin-bottom: 20px;
-    color: var(--white-color); /* Dans la section purple-bg */
+    color: var(--white-color); 
 }
 
 .tarifs-table th, .tarifs-table td {
@@ -187,7 +188,7 @@ header {
     color: var(--primary-color);
 }
 
-/* MODALITÉS DETAILS */
+/* MODALITÉS DETAILS (GRANDS ÉCRANS) */
 .modalites-details {
     margin-top: 40px;
 }
@@ -257,7 +258,7 @@ header {
 }
 
 .couvert-list li::before {
-    content: "✔️"; /* Utilisation d'une coche emoji */
+    content: "✔️"; 
     position: absolute;
     left: 0;
     color: var(--primary-color);
@@ -335,17 +336,105 @@ footer {
     opacity: 0.8;
 }
 
-/* RESPONSIVE (Mobile First) */
-/* Votre fichier style.css */
+/* BOUTON WHATSAPP */
+.whatsapp-float {
+    position: fixed; 
+    width: 60px;
+    height: 60px;
+    bottom: 40px; 
+    left: 40px; 
+    background-color: #25d366; 
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 28px;
+    line-height: 60px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1500;
+    transition: transform 0.3s;
+}
 
-/* ... (Toutes les autres règles CSS normales, y compris les styles de tableau pour grand écran) ... */
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.05);
+}
 
+
+/* ========================================= */
+/* RESPONSIVE DESIGN (Max 768px pour mobiles) */
+/* ========================================= */
 @media (max-width: 768px) {
-
-    /* --- Les autres règles responsive comme le menu, etc. --- */
-    /* ... */
     
-    /* TABLEAU RESPONSIVE : DOIT ÊTRE ICI ! */
+    /* 1. NAVIGATION (Menu Burger) */
+    header {
+        padding: 15px 4%; /* Réduire le padding de l'en-tête */
+    }
+
+    #main-nav {
+        /* Masquer le menu par défaut */
+        display: none; 
+        position: absolute;
+        top: 70px; /* Après l'en-tête */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Le JS ajoute la classe 'active' au clic */
+    #main-nav.active {
+        display: block;
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+    }
+
+    #main-nav ul li a {
+        padding: 15px 5%;
+        text-align: center;
+        border-bottom: 1px solid var(--secondary-color);
+    }
+
+    .menu-toggle {
+        display: block; /* Afficher le bouton menu */
+    }
+
+    /* 2. Section HERO */
+    .hero {
+        height: 50vh; /* Réduire la hauteur */
+    }
+
+    .hero h1 {
+        font-size: 2em; /* Réduire la taille du titre */
+        padding: 0 10px;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+    
+    /* 3. Conditions d'Inscription */
+    .conditions-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .condition-box {
+        width: 100%; /* Occuper toute la largeur */
+        padding: 20px;
+    }
+
+    /* 4. Section Générales et Contenu */
+    .content-section {
+        padding: 40px 4%;
+    }
+    
+    .content-section h2 {
+        font-size: 2em;
+    }
+    
+    /* 5. TABLEAU RESPONSIVE (Code existant optimisé) */
     .tarifs-table table, 
     .tarifs-table thead, 
     .tarifs-table tbody, 
@@ -355,10 +444,8 @@ footer {
         display: block; 
     }
     
-    .tarifs-table thead tr { 
-        position: absolute; 
-        top: -9999px;
-        left: -9999px;
+    .tarifs-table thead { 
+        display: none; /* Cache l'en-tête du tableau */
     }
     
     .tarifs-table tr { 
@@ -385,43 +472,13 @@ footer {
         font-weight: 600;
         color: var(--primary-color);
     }
-    /* FIN DES RÈGLES DU TABLEAU RESPONSIVE */
-
-} /* <-- TRÈS IMPORTANT : La parenthèse fermante du @media est ici. */
-
-/* ce est tous ce qui est style concernant le button whatsap  */
-.whatsapp-float {
-    position: fixed; /* Reste visible même en défilant */
-    width: 60px;
-    height: 60px;
-    bottom: 40px;  /* Distance du bas */
-    left: 40px;   /* 🎯 NOUVEAU : Distance de la gauche */
-    /* REMARQUE : Assurez-vous d'enlever 'right: XXpx;' si elle existait */
     
-    background-color: #25d366; 
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 28px;
-    line-height: 60px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 1500;
-    transition: transform 0.3s;
-}
-
-.whatsapp-float:hover {
-    background-color: #128c7e;
-    transform: scale(1.05);
-}
-
-/* Ajustement pour les petits écrans (Mobile) */
-@media (max-width: 768px) {
+    /* 6. Bouton WhatsApp pour Mobile */
     .whatsapp-float {
         width: 50px;
         height: 50px;
         bottom: 20px;
-        left: 20px;   /* 🎯 NOUVEAU : Distance de la gauche pour mobile */
-        /* REMARQUE : Assurez-vous d'enlever 'right: XXpx;' si elle existait */
+        left: 20px; 
         font-size: 24px;
         line-height: 50px;
     }
