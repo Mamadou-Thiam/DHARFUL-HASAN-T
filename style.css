@@ -402,16 +402,16 @@ footer {
 
     /* 2. Section HERO */
     .hero {
-        height: 50vh; /* Réduire la hauteur */
+        height: 90vh; /* Réduire la hauteur */
     }
 
     .hero h1 {
-        font-size: 2em; /* Réduire la taille du titre */
+        font-size: 0.5em; /* Réduire la taille du titre */
         padding: 0 10px;
     }
 
     .hero p {
-        font-size: 0.9em;
+        font-size: 0.5em;
     }
     
     /* 3. Conditions d'Inscription */
