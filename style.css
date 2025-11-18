@@ -125,7 +125,7 @@ header {
 
 /* SECTION HERO */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('DHARFUL_HASANAT-background.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/hero.png') no-repeat center center/cover;
     height: 60vh;
     display: flex;
     flex-direction: column;
@@ -141,7 +141,7 @@ header {
 }
 
 .hero p {
-    font-size: 1.2em;
+    font-size: 1em;
     margin-bottom: 30px;
     font-weight: 300;
 }
@@ -336,47 +336,16 @@ footer {
 }
 
 /* RESPONSIVE (Mobile First) */
+/* Votre fichier style.css */
+
+/* ... (Toutes les autres règles CSS normales, y compris les styles de tableau pour grand écran) ... */
+
 @media (max-width: 768px) {
+
+    /* --- Les autres règles responsive comme le menu, etc. --- */
+    /* ... */
     
-    .hero h1 {
-        font-size: 2.2em;
-    }
-
-    /* Menu Hamburger */
-    .menu-toggle {
-        display: block; /* Afficher le bouton menu */
-    }
-
-    #main-nav {
-        display: none; /* Cacher le menu par défaut */
-        width: 100%;
-        position: absolute;
-        top: 70px; /* Sous l'en-tête */
-        left: 0;
-        background-color: var(--primary-color);
-        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-        padding: 10px 0;
-    }
-
-    #main-nav.active {
-        display: block; /* Afficher quand actif */
-    }
-
-    #main-nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .conditions-grid {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .condition-box {
-        width: 100%;
-    }
-
-    /* Tableau des tarifs */
+    /* TABLEAU RESPONSIVE : DOIT ÊTRE ICI ! */
     .tarifs-table table, 
     .tarifs-table thead, 
     .tarifs-table tbody, 
@@ -387,12 +356,15 @@ footer {
     }
     
     .tarifs-table thead tr { 
-        position: absolute;
+        position: absolute; 
         top: -9999px;
         left: -9999px;
     }
     
-    .tarifs-table tr { border: 1px solid #ccc; margin-bottom: 20px; }
+    .tarifs-table tr { 
+        border: 1px solid #ccc; 
+        margin-bottom: 20px; 
+    }
     
     .tarifs-table td { 
         border: none;
@@ -413,14 +385,9 @@ footer {
         font-weight: 600;
         color: var(--primary-color);
     }
-    
-    /* Adapter les étiquettes pour les tarifs en mode mobile (vous devrez modifier le HTML pour ajouter data-label) */
-    /* Alternative : Simplifiez le tableau ou utilisez des listes pour les petits écrans */
+    /* FIN DES RÈGLES DU TABLEAU RESPONSIVE */
 
-    /* Pour le moment, on laisse le tableau non adapté pour se concentrer sur la structure, mais c'est un point à améliorer. */
-
-}
-
+} /* <-- TRÈS IMPORTANT : La parenthèse fermante du @media est ici. */
 
 /* ce est tous ce qui est style concernant le button whatsap  */
 .whatsapp-float {
